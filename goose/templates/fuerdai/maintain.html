@@ -1,0 +1,32 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- APP信息 产品下载地址及版本更新 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+		<ol class="breadcrumb">
+		<li><a href="#">产品管理</a></li>
+		<li class="active"><a href="#">产品下载地址及版本更新</a></li>
+		</ol>
+		<div class="container-fluid">
+			<div class="section row">
+				<div class="col-md-6">
+					<p class="app-item">ios信息<a href="/app_maintain/" class="app-edit">编辑</a></p>
+					<div>
+						<img src="{% static 'fuerdai/img/iphone_app.png' %}" alt="">
+						<p>版本号：IOS  1.0.27</p>
+						<p>下载地址：https://itunes.apple.com/cn/app/fu-er-dai/id962274279?mt=8&uo=4</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<p class="app-item">android信息<a href="/app_maintain/" class="app-edit">编辑</a></p>
+					<div>
+						<img src="{% static 'fuerdai/img/android_app.png' %}" alt="">
+						<p>版本号：android  1.0.27</p>
+						<p>下载地址： https://fir.im/pro1</p>
+					</div>
+				</div>
+			</div>
+	  	</div>
+    </div>
+{% endblock %}
+

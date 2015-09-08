@@ -1,0 +1,181 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 增加红包页面 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">运营管理</a></li>
+	    <li><a href="/tickling/">红包</a></li>
+	    <li class="active"><a href="#">增加红包</a></li>
+	  </ol>
+	  {% block ticking-form %}
+	  <form action="" method="" id="ticking-form">
+	  	<p class="item-title">红包基础设置</p>
+		  <div class="tableshow container-fluid">
+			<div class="row">
+			  <div class="col-md-2">发放人</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">红包标题</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">红包说明</div>
+			  <div class="col-md-10"><textarea style="resize: none;width:50%;height:100%;"></textarea></div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">外部展示图片</div>
+				<div class="col-md-10">
+					 <div class="form-group">
+					    <input type="file" id="inputfile">
+					 </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">内部展示图片</div>
+				<div class="col-md-10">
+					 <div class="form-group">
+					    <input type="file" id="inputfile">
+					 </div>
+				</div>
+			</div>
+		  </div>
+		  <p class="item-title">发放时间设置</p>
+		  <div class="tableshow container-fluid">
+		  	<div class="row">
+			  <div class="col-md-2">时段1</div>
+			  <div class="col-md-10 settime clearfix">
+		    	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly placeholder="开始时间">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+		    	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly placeholder="结束时间">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">时段2</div>
+			  <div class="col-md-10 settime clearfix">
+			  	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly placeholder="开始时间">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+		    	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly placeholder="结束时间">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">时段3</div>
+			  <div class="col-md-10 settime clearfix">
+			  	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly placeholder="开始时间">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+		    	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly placeholder="结束时间">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">时段4</div>
+			  <div class="col-md-10 settime clearfix">
+			  	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly placeholder="开始时间">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+		    	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly placeholder="结束时间">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+			  </div>
+			</div>
+		  </div>
+		  <p class="item-title">红包属性设置</p>
+		  <div class="tableshow container-fluid">
+		  	<div class="row">
+			  <div class="col-md-2">有效天数</div>
+			  <div class="col-md-10"><input type="text" ><label class="spacing">可不填</label></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">适用范围</div>
+			  <div class="col-md-10">
+			  	<select >
+				  <option>全平台适用</option>
+				  <option>选择适用范围</option>
+				</select>
+			  </div>
+			</div>
+		  	<div class="row">
+			  <div class="col-md-2">适用门店</div>
+			  <div class="col-md-10 clearfix">
+				  <input type="text" class="fl-left"><span class="glyphicon glyphicon-search search-ico"></span>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">领取范围</div>
+			  <div class="col-md-10"><input type="checkbox" name=""><label class="spacing">存在领取范围</label></div>
+			</div>
+		  	<div class="row">
+			  <div class="col-md-2">领取门店</div>
+			  <div class="col-md-10 clearfix">
+				  <input type="text" class="fl-left"><span class="glyphicon glyphicon-search search-ico"></span>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">红包类型</div>
+			  <div class="col-md-10">
+			  	<select class="half-width">
+				  <option>单个抢红包</option>
+				  <option>首页抢红包列表</option>
+				  <option>只能分享获得</option>
+				</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">领取规则</div>
+			  <div class="col-md-10">
+			  	<select class="half-width">
+				  <option>门店新客户可领</option>
+				  <option>所有人可领取</option>
+				  <option>没有当前门店红包时可领取</option>
+				</select>
+			  </div>
+			</div>
+		  	<div class="row">
+			  <div class="col-md-2">金额设置</div>
+			  <div class="col-md-10">
+			  <input type="text" placeholder="总金额">
+			  <input type="text" placeholder="领取间隔分钟数" class="spacing">
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">总份数</div>
+			  <div class="col-md-10">
+			  <input type="text" placeholder="红包发放总份数">
+			  <input type="text" placeholder="每人最多可领取份数" class="spacing">
+			  </div>
+			</div>
+		  </div>
+		  <button type="button" class="btn btn-primary centered"><a href="">保存</a></button>
+	  </form>
+	  {% endblock %}
+	</div> 
+{% endblock %}
+
+
+
+

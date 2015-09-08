@@ -1,0 +1,151 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 红包 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">运营管理</a></li>
+	    <li class="active"><a href="#">红包</a></li>
+	  </ol>
+	  {% block search %}
+	  <div class="container-fluid search">
+		<div class="row">
+			<div class="col-xs-2">
+				<input type="text" class="form-control" placeholder="搜索商家"><!-- 做模糊搜索 -->
+			</div>
+			<div class="col-xs-2">
+				<input type="text" class="form-control" placeholder="搜索门店"><!-- 做模糊搜索 -->
+			</div>
+			<div class="col-xs-2">
+				<select class="form-control">
+				  <option>状态筛选</option>
+				  <option>初始化</option>
+				  <option>有效</option>
+				  <option>发放结束</option>
+				</select>
+			</div>
+			<div class="col-xs-2">
+				<select class="form-control">
+				  <option>类型筛选</option>
+				  <option>抢红包</option>
+				  <option>分享得红包</option>
+				</select>
+			</div>
+			<div class="col-xs-2">
+				<select class="form-control">
+				  <option>选择城市</option>
+				  <option>杭州</option>
+				  <option>广州</option>
+				</select>
+			</div>
+			<div class="col-xs-2">
+				<select class="form-control">
+				  <option>门店等级</option>
+				  <option>A</option>
+				  <option>B</option>
+				</select>
+			</div>
+		</div>
+		<div class="row spacing-top">
+			<div class="col-xs-6  clearfix">
+				<label class="fl-left" style="line-height:34px;">红包开始发放时间:</label>
+				<div class="half-width fl-left spacing">
+					<div class="input-group date form_datetime " data-date="yyyy  MM dd - hh:ii" data-date-format="yyyy  MM dd - hh:ii" data-link-field="dtp_input1">
+	                    <input class="form-control" size="16" type="text" value="" readonly>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+	            	</div>
+				</div>
+				<span class="fl-left"  style="line-height:34px;padding:0px 5px;">至</span>
+				<div class="half-width fl-left">
+					<div class="input-group date input-append form_datetime " data-date="yyyy  MM dd - hh:ii" data-date-format="yyyy  MM dd - hh:ii" data-link-field="dtp_input1">
+	                    <input class="form-control" size="16" type="text" value="" readonly>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+	            	</div>
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary col-xs-1">搜索</button>
+			<button type="button" class="btn btn-primary col-xs-1 addbtn"><a href="/add_tickling/">下载</a></button>
+			<button type="button" class="btn btn-primary col-xs-1 addbtn"><a href="/add_tickling/"><span class="glyphicon glyphicon-plus"></span>新增</a></button>
+		</div>
+		<div class="statistics row spacing-top">
+			<div class="col-xs-3">
+				发放红包门店总数:<span>2333</span>家
+			</div>
+			<button type="button" class="btn btn-primary col-xs-2 addbtn">停止该红包发放</button>
+			<button type="button" class="btn btn-primary col-xs-2 addbtn">复制已选择红包</button>
+			<button type="button" class="btn btn-primary col-xs-2 addbtn">应用选择红包</button>
+			<button type="button" class="btn btn-primary col-xs-1 addbtn" data-toggle="tooltip" data-placement="top" title="将红包发放时间设置为今日，发放结束时间按原规则顺延">设为今日</button>
+			<button type="button" class="btn btn-primary col-xs-1 addbtn" data-toggle="tooltip" data-placement="top" title="将红包发放时间设置为明日，发放结束时间按原规则顺延">设为明日</button>
+		</div>
+	  </div>
+	  {% endblock %}
+
+	  {% block table %}
+	  <div class="table-responsive tickling-table">
+		<table class="table table-condensed">
+			<tr>
+			  <td><input type="checkbox" class="all-check"></td>
+			  <td>红包编号</td>
+			  <td>发放人</td>
+			  <td>门店</td>
+			  <td>门店等级</td>
+			  <td>总金额/领取金额/使用金额</td>
+			  <td>总份数</td>
+			  <td>领取份数</td>
+			  <td>使用份数</td>
+			  <td>时间</td>
+			  <td>访问次数</td>
+			  <td>地区</td>
+			  <td>状态</td>
+			  <td>操作</td>
+			</tr>
+			<tr>
+			  <td><input type="checkbox"  class="select-check"></td>
+			  <td>1506090000165410</td>
+			  <td>小隋</td>
+			  <td>黑根酒吧</td>
+			  <td>A</td>
+			  <td>1575.00/0.00/0.00</td>
+			  <td>2</td>
+			  <td>2</td>
+			  <td>2</td>
+			  <td>
+			  <span class="start-time">2015/8/7</span class="end-time">-<span>2015/8/12</span>
+			  </td>
+			  <td>4</td>
+			  <td>杭州</td>
+			  <td>发放结束</td>
+			  <td><a href="#" class="delete">删除</a></td>
+			</tr>
+		</table>
+	  </div>
+	  {% endblock %}
+	  {% block pagination %}
+	  <nav class="clearfix">
+	    <ul class="pagination">
+	      <li>
+	        <a href="#" aria-label="Previous">
+	          <span aria-hidden="true">&laquo;</span>
+	        </a>
+	      </li>
+	      <li><a href="#">1</a></li>
+	      <li><a href="#">2</a></li>
+	      <li><a href="#">3</a></li>
+	      <li><a href="#">4</a></li>
+	      <li><a href="#">5</a></li>
+	      <li>
+	        <a href="#" aria-label="Next">
+	          <span aria-hidden="true">&raquo;</span>
+	        </a>
+	      </li>
+	    </ul>
+	    <div class="pagination-item">
+	    	<span class="">选择当前数量：<em>112</em>页</span>
+	    	<span class="spacing">选择全部：<em>112</em>页</span>
+	    </div>
+	 </nav>
+	 {% endblock %}
+	</div>
+{% endblock %}
+
+

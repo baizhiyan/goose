@@ -1,0 +1,42 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 新增商铺页面 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">产品管理</a></li>
+	    <li><a href="/explain/">规则说明文件</a></li>
+	    <li class="active"><a href="#">编辑说明文件</a></li>
+	  </ol>
+	  {% block ticking-form %}
+	  <form action="" method="" id="">
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>用户协议</p>
+			<div class="row">
+			  <div class="col-md-2">内容编辑</div>
+			  <div class="col-md-10"><textarea style="resize: none;width:50%;height:200px;"></textarea></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>众筹说明</p>
+			<div class="row">
+			  <div class="col-md-2">内容编辑</div>
+			  <div class="col-md-10"><textarea style="resize: none;width:50%;height:200px;"></textarea></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>店小二奖励提现规则说明</p>
+			<div class="row">
+			  <div class="col-md-2">内容编辑</div>
+			  <div class="col-md-10"><textarea style="resize: none;width:50%;height:200px;"></textarea></div>
+			</div>
+		  </div>
+		  <button type="button" class="btn btn-primary centered"><a href="">保存</a></button>
+	  </form>
+	  {% endblock %}
+	</div> 
+{% endblock %}
+
+
+
+

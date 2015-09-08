@@ -1,0 +1,130 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+		<ol class="breadcrumb">
+		<li><a href="#">运营管理</a></li>
+		<li class="active"><a href="#">众筹模板</a></li>
+		</ol>
+		<div class="search">
+			<div class="row">
+				<div class="col-xs-2 clearfix">
+					<input type="text" class="fl-left form-control" placeholder="门店搜索"><!-- 做模糊搜索 -->
+				</div>
+				<div class="col-xs-2 clearfix">
+					<select class="form-control">
+					  <option>适用范围</option>
+					  <option>全平台</option>
+					  <option>单个门店</option>
+					</select>
+				</div>
+				<div class="col-xs-2 clearfix">
+					<select class="form-control">
+					  <option>适用性别</option>
+					  <option>男</option>
+					  <option>女</option>
+					</select>
+				</div>
+				<button type="button" class="btn btn-primary col-xs-1">搜索</button>
+				<button type="button" class="btn btn-primary col-xs-1 addbtn"><a href="/add_temp/"><span class="glyphicon glyphicon-plus"></span>新增</a></button>
+			</div>
+		</div>
+		<ul class="nav nav-tabs nav-temp spacing-top">
+		  <li role="presentation"><a href="#">文字模板</a></li>
+		  <li role="presentation"><a href="#">图片模板</a></li>
+		</ul>
+		<form action="" id="">
+			<div class="tableshow spacing-top">
+				<p>文字模板</p>
+				<table class="table table-condensed spacing-top">
+					<tr>
+					  <td><input type="checkbox" class="all-check"></td>
+					  <td>适用门店</td>
+					  <td>文字内容</td>
+					  <td>适用性别</td>
+					  <td>操作</td>
+					</tr>
+					<tr>
+					  <td><input type="checkbox"  class="select-check"></td>
+					  <td>外婆家</td>
+					  <td>陈桂杨逗比陈桂杨逗比陈桂杨逗比陈桂杨逗比陈桂杨逗比陈桂杨逗比</td>
+					  <td>女</td>
+					  <td><span class="glyphicon glyphicon-remove spacing"></span></td>
+					</tr>
+				</table>
+			</div>
+			<div class="tableshow spacing-top" style="display:none;">
+				<p>图片模板</p>
+				<table class="table table-condensed spacing-top">
+					<tr>
+					  <td><input type="checkbox" class="all-check"></td>
+					  <td>适用门店</td>
+					  <td>图片内容</td>
+					  <td>适用性别</td>
+					  <td>操作</td>
+					</tr>
+					<tr>
+					  <td><input type="checkbox"  class="select-check"></td>
+					  <td>外婆家</td>
+					  <td class="tempimg-item"><img src="{% static 'fuerdai/img/android_app.png' %}" alt="" style="width:20px;height:20px;"><img src="{% static 'fuerdai/img/shop.png' %}" alt="" style="width:20px;height:20px;"></td>
+					  <td>女</td>
+					  <td><span class="glyphicon glyphicon-remove spacing"></span></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+		{% block pagination %}
+		  <nav class="clearfix">
+		    <ul class="pagination">
+		      <li>
+		        <a href="#" aria-label="Previous">
+		          <span aria-hidden="true">&laquo;</span>
+		        </a>
+		      </li>
+		      <li><a href="#">1</a></li>
+		      <li><a href="#">2</a></li>
+		      <li><a href="#">3</a></li>
+		      <li><a href="#">4</a></li>
+		      <li><a href="#">5</a></li>
+		      <li>
+		        <a href="#" aria-label="Next">
+		          <span aria-hidden="true">&raquo;</span>
+		        </a>
+		      </li>
+		    </ul>
+		    <div class="pagination-item">
+		    	<span class="">选择当前数量：<em>112</em>页</span>
+		    	<span class="spacing">选择全部：<em>112</em>页</span>
+		    </div>
+		 </nav>
+		{% endblock %}
+    </div>
+{% endblock %}
+
+{% block privatejs %}
+  <script type="text/javascript">
+ 	$(function () {
+ 		$('.nav-temp li').click(function () {
+ 			$('.tableshow').eq($(this).index()).show().siblings().hide();
+ 		});
+ 		$('.tempimg-item img').click(function () {
+ 			var imgsrc = $(this).attr("src");
+ 			// console.log(imgsrc)
+ 			$('.mask-img img').attr("src",imgsrc);
+ 			$('.mask').show();
+ 		});
+ 		$('.mask').click(function () {
+ 			$(this).hide();
+ 		});
+ 	})
+  </script>
+{% endblock %}
+{% block mask %}
+<div class="mask">
+	<div class="mask-bg"></div>
+	<div class="mask-img">
+		<img src="{% static 'fuerdai/img/android_app.png' %}" alt="" >
+	</div>
+</div>
+{% endblock %}

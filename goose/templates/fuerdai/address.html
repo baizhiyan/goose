@@ -1,0 +1,91 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 新增商铺页面 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">运营管理</a></li>
+	    <li class="active"><a href="#">商家地址管理</a></li>
+	  </ol>
+	  <div class="container-fluid search crowdfunding-tab">
+	  	<div class="row sortul">
+	  		<ul class="paralleling col-md-3 city">
+	  			<li>城市</li>
+	  			<li class="add">增加<span class="glyphicon glyphicon-plus spacing"></span></li>
+	  			<li class="city-title">杭州<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li class="city-title">深圳<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  		</ul>
+	  		<ul class="paralleling col-md-3 col-md-offset-1 area" style="display:none;">
+	  			<li>区域</li>
+	  			<li class="add">增加<span class="glyphicon glyphicon-plus spacing"></span></li>
+	  			<li class="area-title">拱墅区<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li class="area-title">江干区<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  		</ul>
+	  		<ul class="paralleling col-md-3 col-md-offset-1 area" style="display:none;">
+	  			<li>区域</li>
+	  			<li class="add">增加<span class="glyphicon glyphicon-plus spacing"></span></li>
+	  			<li>深圳区<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li>深圳区<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  		</ul>
+	  		<ul class="paralleling col-md-3 col-md-offset-1 trading-area" style="display:none;">
+	  			<li>商圈</li>
+	  			<li class="add">增加<span class="glyphicon glyphicon-plus spacing"></span></li>
+	  			<li>万达<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li>银泰<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li>百货<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  		</ul>
+	  		<ul class="paralleling col-md-3 col-md-offset-1 trading-area" style="display:none;">
+	  			<li>商圈</li>
+	  			<li class="add">增加<span class="glyphicon glyphicon-plus spacing"></span></li>
+	  			<li>行行行<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li>四十三<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li>百得得得货<span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  		</ul>
+	  	</div>
+	  </div>
+	</div> 
+{% endblock %}
+
+{% block privatejs %}
+<script type="text/javascript">
+	$(function () {
+		$('.city-title').click(function () {
+			var i = $(this).index();
+			console.log(i);
+			$('.area').eq(i-2).show().siblings('.area').hide();
+		})
+		$('.area-title').click(function () {
+			var i = $(this).index();
+			console.log(i);
+			$('.trading-area').eq(i-2).show().siblings('.trading-area').hide();
+		})
+		$('.add').click(function () {
+			$('.mask').show();
+			$('#add_name').val("");
+		})
+		$('#save').click(function () {
+			$('.mask').hide();
+		})
+	})
+</script>
+{% endblock %}
+{% block mask %}
+<div class="mask">
+	<div class="mask-bg"></div>
+	<div class="maskcontent">
+		<div class="tableshow container-fluid spacing-top " >
+			<p>添加</p>
+			<div>
+				<div class="row">
+				  <div class="col-md-2">名称</div>
+				  <div class="col-md-10"><input type="text" style="width:80%;" id="add_name"></div>
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary centered" id="save"><a href="#">保存</a></button>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+

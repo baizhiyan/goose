@@ -1,0 +1,76 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 反馈信息 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+		<ol class="breadcrumb">
+		<li><a href="#">运营管理</a></li>
+		<li class="active"><a href="#">反馈</a></li>
+		</ol>
+		<div class="container-fluid search crowdfunding-tab">
+		  	<div class="search spacing-bottom">
+				<div class="row">
+					<div class="col-xs-3 ">
+						<div class="input-group date form_datetime" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+		                    <input class="form-control" size="16" type="text" value="" readonly disabled="disabled" placeholder="反馈日期">
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+	                	</div>
+					</div>
+					<button type="button" class="btn btn-primary col-xs-1">搜索</button>
+					<button type="button" class="btn btn-primary col-xs-1 addbtn">下载</button>
+				</div>
+			</div>
+		</div>
+		<table class="table table-condensed feedback-table">
+			<tr>
+			  <td><input type="checkbox" class="all-check"></td>
+			  <td>反馈人</td>
+			  <td>反馈时间</td>
+			  <td>反馈内容</td>
+			  <td>处理情况</td>
+			</tr>
+			<tr>
+			  <td ><input type="checkbox" class="select-check" ></td>
+			  <td>小隋</td>
+			  <td>2015.8.15</td>
+			  <td>很好玩～继续努力！</td>
+			  <td class="processed "><a class='deal-lable' href="#">已处理</a><span class="glyphicon glyphicon-remove spacing"></span></td>
+			</tr>
+			<tr>
+			  <td><input type="checkbox"  class="select-check"></td>
+			  <td>小隋</td>
+			  <td>2015.8.15</td>
+			  <td>黑根酒吧</td>
+			  <td class="untreated"><a class='deal-lable' href="#">未处理</a><span class="glyphicon glyphicon-remove spacing"></span></td>
+			</tr>
+		</table>
+		{% block pagination %}
+		  <nav class="clearfix">
+		    <ul class="pagination">
+		      <li>
+		        <a href="#" aria-label="Previous">
+		          <span aria-hidden="true">&laquo;</span>
+		        </a>
+		      </li>
+		      <li><a href="#">1</a></li>
+		      <li><a href="#">2</a></li>
+		      <li><a href="#">3</a></li>
+		      <li><a href="#">4</a></li>
+		      <li><a href="#">5</a></li>
+		      <li>
+		        <a href="#" aria-label="Next">
+		          <span aria-hidden="true">&raquo;</span>
+		        </a>
+		      </li>
+		    </ul>
+		    <div class="pagination-item">
+		    	<span class="">选择当前数量：<em>112</em>页</span>
+		    	<span class="spacing">选择全部：<em>112</em>页</span>
+		    </div>
+		 </nav>
+		{% endblock %}
+	</div>
+	
+{% endblock %}
+

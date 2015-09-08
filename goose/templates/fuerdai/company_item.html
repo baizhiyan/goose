@@ -1,0 +1,206 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 商铺详情 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">商铺管理</a></li>
+	    <li><a href="/company/">商铺列表</a></li>
+	    <li class="active"><a href="#">商铺详情</a></li>
+	  </ol>
+	  {% block ticking-form %}
+	  <form action="" method="" id="">
+		  <div class="tableshow container-fluid">
+			<div class="row">
+			  <div class="col-md-2">公司名称</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">公司地址</div>
+			  <div class="col-md-10">
+			  	<select disabled="disabled">
+			  		<option>所属省份</option>
+			  		<option>浙江省</option>
+			  		<option>广东省</option>
+			  	</select>
+			  	<select disabled="disabled">
+			  		<option>所属城市</option>
+			  		<option>杭州</option>
+			  		<option>深圳</option>
+			  	</select>
+			  	<select disabled="disabled">
+			  		<option>所属区域</option>
+			  		<option>拱墅区</option>
+			  		<option>上城区</option>
+			  	</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">具体地址</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">联系人</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">联系方式</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid">
+		  	<div class="clearfix pad-top">
+				<p class="fl-left">下属门店</p><a href="/add_shop/" style="background:none"><span class="glyphicon glyphicon-plus fl-right cur-ico shop"></span></a>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">门店名称</div>
+			  <div class="col-md-10"><a href="/shop_item/">尚品坊</a></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">门店名称</div>
+			  <div class="col-md-10"><a href="/shop_item/">尚品坊</a></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>优惠券信息</p>
+	  		<div class="row">
+			  <div class="col-md-2">优惠券是否通用</div>
+			  <div class="col-md-10">
+				  <input type="checkbox"  id="" disabled="disabled">
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">使用规则</div>
+			  <div class="col-md-10"><textarea style="resize: none;width:50%;height:200px;" disabled="disabled"></textarea></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">有效期（天）</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">消费比例（%）</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>合同信息</p>
+			<div class="row">
+			  <div class="col-md-2">开始时间</div>
+			  <div class="col-md-10">
+		    	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly disabled="disabled">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+               </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">结束时间</div>
+			  <div class="col-md-10">
+		    	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly disabled="disabled">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+               </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">合同照片</div>
+			  <div class="col-md-10">
+					<div class="form-group">
+					   <input type="file" id="inputfile" disabled="disabled">
+					</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>财务信息</p>
+	  		<div class="row">
+			  <div class="col-md-2">账户独立</div>
+			  <div class="col-md-10">
+				  <input type="checkbox"  id="independent">
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">打款联系人</div>
+			  <div class="col-md-10 "><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">手机号码</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">座机号码</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+		  	<p>银行信息</p>
+			<div class="row">
+			  <div class="col-md-2">对私帐号</div>
+			  <div class="col-md-10"><input type="checkbox" ></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">开户银行</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">开户银行详情</div>
+			  <div class="col-md-10"><input type="text" placeholder="所属省份" disabled="disabled"><input type="text" placeholder="所属城市" class="spacing" disabled="disabled"><input type="text" placeholder="所属支行" class="spacing" disabled="disabled"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+		  	<p>证件信息</p>
+			<div class="row">
+			  <div class="col-md-2">营业执照号码</div>
+			  <div class="col-md-10 clearfix"><input type="text" class="fl-left" disabled="disabled"><input type="file" id="" class="fl-left" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">组织机构代码证</div>
+			  <div class="col-md-10 clearfix"><input type="text" class="fl-left" disabled="disabled"><input type="file" id="" class="fl-left" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">税务登记证</div>
+			  <div class="col-md-10 clearfix"><input type="text" class="fl-left" disabled="disabled"><input type="file" id="" class="fl-left" disabled="disabled"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+		  	<p>合作信息</p>
+			<div class="row">
+			  <div class="col-md-2">打款模式:</div>
+			  <div class="col-md-10">
+			  	<select class="half-width" disabled="disabled">
+				  <option>自动打款</option>
+				  <option>手动打款</option>
+				</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">最低打款金额:</div>
+			  <div class="col-md-10"><input type="text"disabled="disabled" ></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">手续费率:</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+		  </div>
+
+		  <button type="button" class="btn btn-primary centered"><a href="/add_company/">编辑</a></button>
+	  </form>
+	  {% endblock %}
+	</div> 
+{% endblock %}
+
+{% block privatejs %}
+  <script type="text/javascript">
+ 	$(function () {
+ 		$('.add-shop').click(function () {
+ 			var addshop = '<div class="row">' + $('.shopimg .row').html() + '</div>';
+ 			$('.shopimg').append(addshop);
+ 		})
+ 	})
+  </script>
+{% endblock %}
+
+
+

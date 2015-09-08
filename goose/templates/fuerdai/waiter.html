@@ -1,0 +1,96 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 店小二管理 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">店小二管理</a></li>
+	    <li class="active"><a href="#">认证店小二管理</a></li>
+	  </ol>
+	  {% block search %}
+	  <div class="container-fluid search ">
+	  	<div class="search spacing-bottom">
+			<div class="row">
+				<div class="col-xs-2 ">
+					<input type="text" class="form-control" placeholder="姓名搜索"><!-- 做模糊搜索 -->
+				</div>
+				<div class="col-xs-2 ">
+					<input type="text" class="form-control" placeholder="门店搜索"><!-- 做模糊搜索 -->
+				</div>
+				<button type="button" class="btn btn-primary col-xs-1">搜索</button>
+				<button type="button" class="btn btn-primary col-xs-1 addbtn">下载</button>
+				<button type="button" class="btn btn-primary col-xs-1 addbtn"><a href="/add_waiter/"><span class="glyphicon glyphicon-plus"></span>新增</a></button>
+			</div>
+		</div>
+	  </div>
+	  {% endblock %}
+
+	  {% block table %}
+	  <div class="table-responsive tickling-table">
+		<table class="table table-condensed">
+			<tr>
+			  <td><input type="checkbox" class="all-check"></td>
+			  <td>店小二id</td>
+			  <td>姓名</td>
+			  <td>手机号码</td>
+			  <td>昵称</td>
+			  <td>门店</td>
+			  <td>共收款笔数</td>
+			  <td>退款笔数</td>
+			  <td>共收款金额</td>
+			  <td>退款金额</td>
+			  <td>共获得奖励</td>
+			  <td>共提现金额</td>
+			  <td>当前余额</td>
+			  <td>当前可提现余额</td>
+			  <td>操作</td>
+			</tr>
+			<tr>
+			  <td><input type="checkbox"  class="select-check"></td>
+			  <td>1122</td>
+			  <td>陈逗比</td>
+			  <td>52266841</td>
+			  <td>我是逗比</td>
+			  <td>外婆家</td>
+			  <td>33</td>
+			  <td>1</td>
+			  <td>5555</td>
+			  <td>66</td>
+			  <td>44</td>
+			  <td>11</td>
+			  <td>22</td>
+			  <td>44</td>
+			  <td class="untreated"><a href="/waiter_item/" style="background:none;">查看</a><span class="glyphicon glyphicon-remove spacing remove-td"></span></td>
+			</tr>
+		</table>
+		{% block pagination %}
+		  <nav class="clearfix">
+		    <ul class="pagination">
+		      <li>
+		        <a href="#" aria-label="Previous">
+		          <span aria-hidden="true">&laquo;</span>
+		        </a>
+		      </li>
+		      <li><a href="#">1</a></li>
+		      <li><a href="#">2</a></li>
+		      <li><a href="#">3</a></li>
+		      <li><a href="#">4</a></li>
+		      <li><a href="#">5</a></li>
+		      <li>
+		        <a href="#" aria-label="Next">
+		          <span aria-hidden="true">&raquo;</span>
+		        </a>
+		      </li>
+		    </ul>
+		    <div class="pagination-item">
+		    	<span class="">选择当前数量：<em>112</em>页</span>
+		    	<span class="spacing">选择全部：<em>112</em>页</span>
+		    </div>
+		 </nav>
+		{% endblock %}
+	  </div>
+	  {% endblock %}
+	</div>
+{% endblock %}
+
+

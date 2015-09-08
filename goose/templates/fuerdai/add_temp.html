@@ -1,0 +1,85 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 新增众筹模板 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+		<ol class="breadcrumb">
+		<li><a href="#">运营管理</a></li>
+		<li><a href="/temp/">众筹模板</a></li>
+		<li class="active"><a href="#">新增众筹模板</a></li>
+		</ol>
+		<ul class="nav nav-tabs nav-temp">
+		  <li role="presentation"><a href="#">文字模板</a></li>
+		  <li role="presentation"><a href="#">图片模板</a></li>
+		</ul>
+		<button type="button" class="btn btn-primary" id='temp-btn'>保存</button>
+		<form action="" id="">
+			<div class="tableshow container-fluid spacing-top usual-ul">
+				<div class="clearfix">
+					<p class="fl-left">文字模板</p><span class="glyphicon glyphicon-plus fl-right cur-ico usual"></span>
+				</div>
+				<div class="row">
+				  <div class="col-md-2">适用门店</div>
+				  <div class="col-md-10"><input type="text" style="width:80%;"></div>
+				</div>
+				<div class="row">
+				  <div class="col-md-2">适用性别</div>
+				  <div class="col-md-10"><input type="text" style="width:80%;"></div>
+				</div>
+				<div class="row add-text">
+				  <div class="col-md-2">添加文字</div>
+				  <div class="col-md-10"><input type="text" style="width:80%;"></div>
+				</div>
+			</div>
+			<div class="tableshow container-fluid spacing-top shop-ul" style="display:none;">
+				<div class="clearfix">
+					<p class="fl-left">图片模板</p><span class="glyphicon glyphicon-plus fl-right cur-ico shop"></span>
+				</div>
+				<div class="shop-item">
+					<div class="row">
+					  <div class="col-md-2">适用门店</div>
+					  <div class="col-md-10"><input type="text" style="width:80%;"></div>
+					</div>
+					<div class="row">
+					  <div class="col-md-2">适用性别</div>
+					  <div class="col-md-10">
+					  	<select>
+					  		<option>男</option>
+					  		<option>女</option>
+					  	</select>
+					  </div>
+					</div>
+					<div class="row tempimg">
+						<div class="col-md-2">添加图片</div>
+						<div class="col-md-10">
+							 <div class="form-group">
+							    <input type="file" id="inputfile">
+							 </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+    </div>
+{% endblock %}
+
+{% block privatejs %}
+  <script type="text/javascript">
+ 	$(function () {
+ 		$('.nav-temp li').click(function () {
+ 			$('.tableshow').eq($(this).index()).show().siblings().hide();
+ 		})
+ 		$('.usual').click(function () {
+ 			var usualrow = '<div class="row">' + $('.usual-ul .add-text').html() + '</div>';
+ 			$('.usual-ul').append(usualrow);
+ 		})
+ 		$('.shop').click(function () {
+ 			var shopdiv = '<div class="row tempimg">' + $('.tempimg').html() + '</div>';
+ 			$('.shop-item').append(shopdiv);
+ 		})
+ 	})
+  </script>
+{% endblock %}
+
+
+

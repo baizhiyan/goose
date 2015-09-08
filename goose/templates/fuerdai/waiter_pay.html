@@ -1,0 +1,88 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 举报页面 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+		<ol class="breadcrumb">
+		<li><a href="#">财务管理</a></li>
+		<li class="active"><a href="#">店小二打款</a></li>
+		</ol>
+		<div class="container-fluid search crowdfunding-tab">
+		  	<div class="search spacing-bottom">
+				<div class="row">
+					<div class="col-xs-3 ">
+						<div class="input-group date form_datetime" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+		                    <input class="form-control" size="16" type="text" value="" readonly disabled="disabled" placeholder="打款日期">
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+	                	</div>
+					</div>
+					<div class="col-xs-2">
+						<select class="form-control">
+						  <option>打款状态</option>
+						  <option>已打款</option>
+						  <option>未打款</option>
+						</select>
+					</div>
+					<button type="button" class="btn btn-primary col-xs-1">搜索</button>
+					<button type="button" class="btn btn-primary col-xs-2 addbtn">下载未打款</button>
+					<button type="button" class="btn btn-primary col-xs-2 addbtn">标记为已打款</button>
+				</div>
+			</div>
+		</div>
+		<table class="table table-condensed">
+			<tr>
+			  <td><input type="checkbox" class="all-check"></td>
+			  <td>帐号</td>
+			  <td>户名</td>
+			  <td>金额</td>
+			  <td>开户行</td>
+			  <td>开户地</td>
+			  <td>注释</td>
+			  <td>是否已打款</td>
+			  <td>所属商家</td>
+			  <td>所属门店</td>
+			  <td>申请提现时间</td>
+			</tr>
+			<tr>
+			  <td ><input type="checkbox" class="select-check" ></td>
+			  <td>6228480328744549077</td>
+			  <td>吕超骏</td>
+			  <td>2975</td>
+			  <td>农业银行和睦支行</td>
+			  <td>杭州市</td>
+			  <td>注释</td>
+			  <td>已打款</td>
+			  <td>外婆家</td>
+			  <td>外婆家</td>
+			  <td>2015.6.8</td>
+			</tr>
+		</table>
+		{% block pagination %}
+		  <nav class="clearfix">
+		    <ul class="pagination">
+		      <li>
+		        <a href="#" aria-label="Previous">
+		          <span aria-hidden="true">&laquo;</span>
+		        </a>
+		      </li>
+		      <li><a href="#">1</a></li>
+		      <li><a href="#">2</a></li>
+		      <li><a href="#">3</a></li>
+		      <li><a href="#">4</a></li>
+		      <li><a href="#">5</a></li>
+		      <li>
+		        <a href="#" aria-label="Next">
+		          <span aria-hidden="true">&raquo;</span>
+		        </a>
+		      </li>
+		    </ul>
+		    <div class="pagination-item">
+		    	<span class="">选择当前数量：<em>112</em>页</span>
+		    	<span class="spacing">选择全部：<em>112</em>页</span>
+		    </div>
+		 </nav>
+		{% endblock %}
+	</div>
+{% endblock %}
+

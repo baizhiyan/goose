@@ -1,0 +1,69 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 举报处理页面 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+		<ol class="breadcrumb">
+		<li><a href="#">业务审批</a></li>
+		<li class="active"><a href="#">新增门店审批</a></li>
+		</ol>
+		<div>
+			<div class="row">
+				<div class="col-xs-2">
+					<select class="form-control">
+					  <option>状态</option>
+					  <option>未处理</option>
+					  <option>已处理</option>
+					</select>
+				</div>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" placeholder="商户搜索"><!-- 做模糊搜索 -->
+				</div>
+				<button type="button" class="btn btn-primary col-xs-1">确认</button>
+				<button type="button" class="btn btn-primary col-xs-1 addbtn">下载</button>
+			</div>
+			<table class="table table-condensed spacing-top">
+				<tr>
+				  <td><input type="checkbox" class="all-check"></td>
+				  <td>门店名称</td>
+				  <td>提交人员</td>
+				  <td>状态</td>
+				  <td>操作</td>
+				</tr>
+				<tr>
+				  <td ><input type="checkbox" class="select-check" ></td>
+				  <td>外婆家</td>
+				  <td>小胖</td>
+				  <td>未处理</td>
+				  <td><a href="/add_shop/">审批</a></td>
+				</tr>
+			</table>
+	  	</div>
+	  	{% block pagination %}
+		  <nav class="clearfix">
+		    <ul class="pagination">
+		      <li>
+		        <a href="#" aria-label="Previous">
+		          <span aria-hidden="true">&laquo;</span>
+		        </a>
+		      </li>
+		      <li><a href="#">1</a></li>
+		      <li><a href="#">2</a></li>
+		      <li><a href="#">3</a></li>
+		      <li><a href="#">4</a></li>
+		      <li><a href="#">5</a></li>
+		      <li>
+		        <a href="#" aria-label="Next">
+		          <span aria-hidden="true">&raquo;</span>
+		        </a>
+		      </li>
+		    </ul>
+		    <div class="pagination-item">
+		    	<span class="">选择当前数量：<em>112</em>页</span>
+		    	<span class="spacing">选择全部：<em>112</em>页</span>
+		    </div>
+		 </nav>
+		{% endblock %}
+    </div>
+{% endblock %}
+

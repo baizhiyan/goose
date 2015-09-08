@@ -1,0 +1,183 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 数据监控 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">运营管理</a></li>
+	    <li class="active"><a href="#">数据统计</a></li>
+	  </ol>
+	  {% block search-share %}
+	  <div class="container-fluid search share-tab">
+	  	<div class="search spacing-bottom">
+			<div class="row">
+				<div class="col-xs-3 ">
+					<div class="input-group date form_datetime" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+	                    <input class="form-control" size="16" type="text" value="" readonly disabled="disabled" placeholder="分享日期">
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+				</div>
+				<div class="col-xs-2 ">
+					<select  name="" class="form-control">
+					  <option value="">分享内容</option>
+					  <option value="">众筹信息</option>
+					  <option value="">商家信息</option>
+					  <option value="">众筹信息</option>
+					</select>
+				</div>
+				<div class="col-xs-2 ">
+					<select  name="" class="form-control">
+					  <option value="">发起分享位置</option>
+					  <option value="">发起众筹后分享</option>
+					  <option value="">商家详情页分享</option>
+					  <option value="">众筹详情页分享</option>
+					</select>
+				</div>
+				<div class="col-xs-2 ">
+					<select  name="" class="form-control">
+					  <option value="">分享途径</option>
+					  <option value="">微信</option>
+					  <option value="">微信朋友圈</option>
+					  <option value="">新浪微博</option>
+					</select>
+				</div>
+				<button type="button" class="btn btn-primary col-xs-1">搜索</button>
+				<button type="button" class="btn btn-primary col-xs-1 addbtn">下载</button>
+			</div>
+		</div>
+	  </div>
+	  {% endblock %}
+	  
+	  {% block share-statistics %}
+	  <div class="statistics row container-fluid share-tab" >
+	  	<p class="col-xs-3">分享总次数:<span>2333</span>次</p>
+		<p class="col-xs-3 ">微信:<span>2333</span>次</p>
+		<p class="col-xs-3 ">微信朋友圈:<span>2333</span>次</p>
+		<p class="col-xs-3 ">新浪微博:<span>2333</span>次</p>
+	  </div>
+	  {% endblock %}
+	  {% block search-crowdfunding %}
+	  <div class="container-fluid search crowdfunding-tab" style="display:none;">
+	  	<div class="search spacing-bottom">
+			<div class="row">
+				<div class="col-xs-3 ">
+					<div class="input-group date form_datetime" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+	                    <input class="form-control" size="16" type="text" value="" readonly disabled="disabled" placeholder="众筹日期">
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                	</div>
+				</div>
+				<button type="button" class="btn btn-primary col-xs-1">搜索</button>
+				<button type="button" class="btn btn-primary col-xs-1 addbtn">下载</button>
+			</div>
+		</div>
+	  </div>
+	  {% endblock %}
+	  {% block crowdfunding-statistics %}
+	  <div class="statistics row container-fluid crowdfunding-tab" style="display:none;">
+	  	<p class="col-xs-3">众筹总份数:<span>2333</span>次</p>
+		<p class="col-xs-3 ">已众筹份数:<span>2333</span>次</p>
+		<p class="col-xs-3 ">已众筹金额:<span>2333</span>次</p>
+		<p class="col-xs-3 ">参与众筹人数:<span>2333</span>次</p>
+	  </div>
+	  {% endblock %}
+	  {% block nav-tabs %}
+	  <ul class="nav nav-tabs nav-temp " style="border-bottom:none;">
+		  <li role="presentation"><a href="#">分享数据</a></li>
+		  <li role="presentation"><a href="#">众筹数据</a></li>
+	  </ul>
+	  {% endblock %}
+	  {% block table1 %}
+	  <div class="table-responsive share-tab">
+		<table class="table table-condensed">
+			<tr>
+			  <td class="all-check"><input type="checkbox"></td>
+			  <td>分享时间</td>
+			  <td>分享内容</td>
+			  <td>发起分享位置</td>
+			  <td>分享途径</td>
+			  <td>分享连接被访问次数</td>
+			</tr>
+			<tr>
+			  <td><input type="checkbox"></td>
+			  <td>2015.6.7-10:05</td>
+			  <td>众筹信息</td>  <!-- 众筹信息/商家信息/众筹信息 -->
+			  <td>发起众筹后分享</td>  <!-- 发起众筹后分享/商家详情页分享/众筹详情页分享 -->
+			  <td>分享途径</td>   <!-- 微信/微信朋友圈/新浪微博 -->
+			  <td>2</td>
+			</tr>
+		</table>
+	  </div>
+	  {% endblock %}
+	  {% block table2 %}
+	  <div class="table-responsive crowdfunding-tab" style="display:none;">
+		<table class="table table-condensed">
+			<tr>
+			  <td><input type="checkbox" class="all-check"></td>
+			  <td>发起众筹时间</td>
+			  <td>付尓代id</td>
+			  <td>众筹id</td>
+			  <td>众筹金额</td>
+			  <td>众筹总份数</td>
+			  <td>已众筹份数</td>
+			  <td>已众筹金额</td>
+			  <td>参与众筹人数</td>
+			</tr>
+			<tr>
+			  <td ><input type="checkbox" class="select-check" ></td>
+			  <td>2015.8.5</td>
+			  <td>225566</td>
+			  <td>86544122</td>
+			  <td>25</td>
+			  <td>10</td>
+			  <td>3</td>
+			  <td>2</td>
+			  <td>1</td>
+			</tr>
+		</table>
+	  </div>
+	  {% endblock %}
+	  {% block pagination %}
+	  <nav class="clearfix">
+	    <ul class="pagination">
+	      <li>
+	        <a href="#" aria-label="Previous">
+	          <span aria-hidden="true">&laquo;</span>
+	        </a>
+	      </li>
+	      <li><a href="#">1</a></li>
+	      <li><a href="#">2</a></li>
+	      <li><a href="#">3</a></li>
+	      <li><a href="#">4</a></li>
+	      <li><a href="#">5</a></li>
+	      <li>
+	        <a href="#" aria-label="Next">
+	          <span aria-hidden="true">&raquo;</span>
+	        </a>
+	      </li>
+	    </ul>
+	    <div class="pagination-item">
+	    	<span class="">选择当前数量：<em>112</em>页</span>
+	    	<span class="spacing">选择全部：<em>112</em>页</span>
+	    </div>
+	 </nav>
+	 {% endblock %}
+	</div>
+{% endblock %}
+
+{% block privatejs %}
+<script type="text/javascript">
+	$(function () {
+		// $('.crowdfunding-tab').hide();
+		$('.nav-temp li:nth-child(2)').click(function () {
+			$('.crowdfunding-tab').show();
+			$('.share-tab').hide();
+		})
+		$('.nav-temp li:first-child').click(function () {
+			$('.crowdfunding-tab').hide();
+			$('.share-tab').show();
+		})
+	})
+</script>
+{% endblock %}

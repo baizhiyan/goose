@@ -1,0 +1,30 @@
+{% load static %}<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>付尔代后台管理系统</title> 
+    <link href="{% static "fuerdai/css/bootstrap.css" %}" rel="stylesheet">
+    <link href="{% static "fuerdai/css/style.css" %}" rel="stylesheet">
+  </head>
+
+  <body class="bg-base">
+    <div class="page-form login">
+      <h1>付尔代后台管理系统</h1>
+      <form action=""  class="form-base">
+        <p><span class="glyphicon glyphicon-user"></span><input type="text" placeholder="Username"></p>
+        <p><span class="glyphicon glyphicon-lock"></span><input type="password" placeholder="Password"></p>
+        <a href="/forget/" class="forget">忘记密码</a>
+        <div class="put-btn">
+          <button class="log-in"><a href="/tickling/">登录</a></button>
+        </div>
+      </form>
+    </div>
+    <script src="{% static "fuerdai/js/jquery-1.11.1.min.js" %}"></script>
+    <script src="{% static "fuerdai/js/bootstrap.js" %}"></script>
+  </body>
+</html>

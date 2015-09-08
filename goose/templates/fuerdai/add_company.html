@@ -1,0 +1,180 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 新增商铺页面 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">商铺管理</a></li>
+	    <li><a href="/company/">商铺入驻</a></li>
+	    <li class="active"><a href="#">新增商铺</a></li>
+	  </ol>
+	  {% block ticking-form %}
+	  <form action="" method="" id="">
+		  <div class="tableshow container-fluid">
+			<div class="row">
+			  <div class="col-md-2">公司名称</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">公司地址</div>
+			  <div class="col-md-10">
+			  	<select>
+			  		<option>所属省份</option>
+			  		<option>浙江省</option>
+			  		<option>广东省</option>
+			  	</select>
+			  	<select>
+			  		<option>所属城市</option>
+			  		<option>杭州</option>
+			  		<option>深圳</option>
+			  	</select>
+			  	<select>
+			  		<option>所属区域</option>
+			  		<option>拱墅区</option>
+			  		<option>上城区</option>
+			  	</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">具体地址</div>
+			  <div class="col-md-10"><input type="text" ></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">联系人</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">联系方式</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>优惠券信息</p>
+	  		<div class="row">
+			  <div class="col-md-2">优惠券是否通用</div>
+			  <div class="col-md-10">
+				  <input type="checkbox"  id="">
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">使用规则</div>
+			  <div class="col-md-10"><textarea style="resize: none;width:50%;height:200px;"></textarea></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">有效期（天）</div>
+			  <div class="col-md-10"><input type="text" ></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">消费比例（%）</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>合同信息</p>
+			<div class="row">
+			  <div class="col-md-2">开始时间</div>
+			  <div class="col-md-10">
+		    	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+               </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">结束时间</div>
+			  <div class="col-md-10">
+		    	<div class="input-group date form_datetime col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+               </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">合同照片</div>
+			  <div class="col-md-10">
+					<input type="file" id="">
+			  </div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>财务信息</p>
+	  		<div class="row">
+			  <div class="col-md-2">账户是否独立</div>
+			  <div class="col-md-10">
+				  <input type="checkbox" id="independent">
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">打款联系人</div>
+			  <div class="col-md-10 "><input type="text" ></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">手机号码</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">座机号码</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+		  	<p>银行信息</p>
+			<div class="row">
+			  <div class="col-md-2">对私帐号</div>
+			  <div class="col-md-10"><input type="checkbox" ></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">开户银行</div>
+			  <div class="col-md-10"><input type="text" ></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">开户银行详情</div>
+			  <div class="col-md-10"><input type="text" placeholder="所属省份"><input type="text" placeholder="所属城市" class="spacing"><input type="text" placeholder="所属支行" class="spacing"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+		  	<p>证件信息</p>
+			<div class="row">
+			  <div class="col-md-2">营业执照号码</div>
+			  <div class="col-md-10 clearfix"><input type="text" class="fl-left"><input type="file" id="" class="fl-left"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">组织机构代码证</div>
+			  <div class="col-md-10 clearfix"><input type="text" class="fl-left"><input type="file" id="" class="fl-left"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">税务登记证</div>
+			  <div class="col-md-10 clearfix"><input type="text" class="fl-left"><input type="file" id="" class="fl-left"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+		  	<p>合作信息</p>
+			<div class="row">
+			  <div class="col-md-2">打款模式:</div>
+			  <div class="col-md-10">
+			  	<select class="half-width">
+				  <option>自动打款</option>
+				  <option>手动打款</option>
+				</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">最低打款金额:</div>
+			  <div class="col-md-10"><input type="text" ></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">手续费率:</div>
+			  <div class="col-md-10"><input type="text" ></div>
+			</div>
+		  </div>
+		  <button type="button" class="btn btn-primary centered"><a href="">保存</a></button>
+	  </form>
+	  {% endblock %}
+	</div> 
+{% endblock %}
+
+
+
+

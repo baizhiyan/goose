@@ -1,0 +1,40 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- APP信息编辑 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+		<ol class="breadcrumb">
+		<li><a href="#">运营管理</a></li>
+		<li><a href="/maintain/">运维</a></li>
+		<li class="active"><a href="#">APP信息编辑</a></li>
+		</ol>
+		<form action="" id="">
+			<div class="tableshow container-fluid">
+				<div class="row">
+					<div class="col-md-2">系统：</div>
+					<div class="col-md-10">
+						<select  name="" class="half-width">
+						  <option value="">ios</option>
+						  <option value="">android</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">版本</div>
+					<div class="col-md-10">
+						<input type="text">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">下载地址</div>
+					<div class="col-md-10">
+						<input type="text">
+					</div>
+				</div>
+			</div>
+			
+			<button type="button" class="btn btn-primary centered"><a href="">保存</a></button>
+		</form>
+    </div>
+{% endblock %}
+

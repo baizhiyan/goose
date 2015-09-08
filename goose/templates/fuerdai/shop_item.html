@@ -1,0 +1,226 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 门店详情 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">商铺管理</a></li>
+	    <li><a href="/company/">商铺入驻</a></li>
+	    <li class="active"><a href="#">门店详情</a></li>
+	  </ol>
+	  {% block ticking-form %}
+	  <form action="" method="" id="">
+		  <div class="tableshow container-fluid">
+			<div class="row">
+			  <div class="col-md-2">门店名称</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">商标</div>
+			  <div class="col-md-10"><input type="file" id="" ></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">所属公司</div>
+			  <div class="col-md-10 clearfix">
+				  <input type="text" class="fl-left" disabled="disabled"><span class="glyphicon glyphicon-search search-ico"></span>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">所属商圈</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">门店位置</div>
+			  <div class="col-md-10">
+			  	<select disabled="disabled">
+			  		<option>所属省份</option>
+			  		<option>浙江省</option>
+			  		<option>广东省</option>
+			  	</select>
+			  	<select disabled="disabled">
+			  		<option>所属城市</option>
+			  		<option>杭州</option>
+			  		<option>深圳</option>
+			  	</select>
+			  	<select disabled="disabled">
+			  		<option>所属区域</option>
+			  		<option>拱墅区</option>
+			  		<option>上城区</option>
+			  	</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">具体地址</div>
+			  <div class="col-md-10"><input type="text" placeholder="经度" disabled="disabled">
+			  <input type="text" placeholder="纬度" class="spacing" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">人均消费</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">门店等级</div>
+			  <div class="col-md-10">
+			  	<select class="form-control" style="width:20%;" disabled="disabled">
+			  		<option>A</option>
+			  		<option>B</option>
+			  		<option>C</option>
+			  	</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">推荐名</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>优惠券信息</p>
+			<div class="row">
+			  <div class="col-md-2">使用规则</div>
+			  <div class="col-md-10"><textarea style="resize: none;width:50%;height:200px;" disabled="disabled"></textarea></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">有效期（天）</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">消费比例（%）</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>门店二维码</p>
+			<div class="row">
+			  <div class="col-md-2">二维码备注</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">二维码内容</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">二维码图片</div>
+			  <div class="col-md-10"><img src="{% static 'fuerdai/img/shop.png' %}" width=200 height=200></div>
+			</div>
+		  </div>
+		  <div class="extra tableshow container-fluid spacing-top">
+		  	<div class="row">
+			  <div class="col-md-2">二维码访问次数</div>
+			  <div class="col-md-10">212313</div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid">
+		  	<div class="clearfix pad-top">
+				<p class="fl-left">下属店小二</p><a href="/add_waiter/" style="background:none"><span class="glyphicon glyphicon-plus fl-right cur-ico shop"></span></a>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">店小二</div>
+			  <div class="col-md-10"><a href="/waiter_item/">大胖</a></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">店小二</div>
+			  <div class="col-md-10"><a href="/waiter_item/">小胖</a></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>联系方式</p>
+			<div class="row">
+			  <div class="col-md-2">座机号码</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">手机号码</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+		  	<div class="clearfix ">
+				<p class="fl-left spacing-halftop">商户图片</p><span class="glyphicon glyphicon-plus fl-right cur-ico add-shop pad-top"></span>
+			</div>
+			<div class="shopimg">
+				<div class="row">
+					<div class="col-md-2">商户图片</div>
+					<div class="col-md-10">
+						 <div>
+						    <input type="file" id="" disabled="disabled">
+						 </div>
+					</div>
+				</div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top extra">
+		  	<p>证件信息</p>
+			<div class="row">
+			  <div class="col-md-2">营业执照号码</div>
+			  <div class="col-md-10 clearfix"><input type="text" class="fl-left" disabled="disabled"><input type="file" id="" class="fl-left"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">组织机构代码证</div>
+			  <div class="col-md-10 clearfix"><input type="text" class="fl-left" disabled="disabled"><input type="file" id="" class="fl-left"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">税务登记证</div>
+			  <div class="col-md-10 clearfix"><input type="text" class="fl-left" disabled="disabled"><input type="file" id="" class="fl-left"></div>
+			</div>
+		  </div>
+		  <!-- 如果所属的商铺财务选择独立的话，显示以下的表单内容 -->
+		  <div class="tableshow container-fluid extra">
+		  	<p>财务信息</p>
+			<div class="row">
+			  <div class="col-md-2">打款联系人</div>
+			  <div class="col-md-10 "><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">手机号码</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">座机号码</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top extra">
+		  	<p>银行信息</p>
+			<div class="row">
+			  <div class="col-md-2">对私帐号</div>
+			  <div class="col-md-10"><input type="checkbox" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">开户银行</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">开户银行详情</div>
+			  <div class="col-md-10"><input type="text" placeholder="所属省份" disabled="disabled"><input type="text" placeholder="所属城市" class="spacing" disabled="disabled"><input type="text" placeholder="所属支行" class="spacing" disabled="disabled"></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top extra">
+		  	<p>合作信息</p>
+			<div class="row">
+			  <div class="col-md-2">打款模式:</div>
+			  <div class="col-md-10">
+			  	<select class="half-width" disabled="disabled">
+				  <option>自动打款</option>
+				  <option>手动打款</option>
+				</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">最低打款金额:</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">手续费率:</div>
+			  <div class="col-md-10"><input type="text" disabled="disabled" ></div>
+			</div>
+		  </div>
+		  <button type="button" class="btn btn-primary centered"><a href="/add_shop/">编辑</a></button>
+	  </form>
+	  {% endblock %}
+	</div> 
+{% endblock %}
+
+
+
+
+

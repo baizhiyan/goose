@@ -1,0 +1,36 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 举报处理页面 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+		<ol class="breadcrumb">
+		<li><a href="#">产品管理</a></li>
+		<li class="active"><a href="#">规则说明文件</a></li>
+		</ol>
+		<ul class="nav nav-tabs nav-temp spacing-top">
+		  <li role="presentation"><a href="#">用户协议</a></li>
+		  <li role="presentation"><a href="#">众筹说明</a></li>
+		  <li role="presentation"><a href="#">店小二奖励提现规则说明</a></li>
+		</ul>
+		<div class="tab-item spacing-top">
+			<textarea name="" id="" >用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议</textarea>
+		</div>
+		<div class="tab-item spacing-top" style="display:none;">
+			<textarea name="" id="" >众筹说明众筹说明众筹说明众筹说明众筹说明众筹说明</textarea>
+		</div>
+		<div class="tab-item spacing-top" style="display:none;">
+			<textarea name="" id="" >店小二奖励提现规则说明店小二奖励提现规则说明店小二奖励提现规则说明店小二奖励提现规则说明店小二奖励提现规则说明店小二奖励提现规则说明</textarea>
+		</div>
+		<button type="button" class="btn btn-primary centered"><a href="/explain_edit/">编辑</a></button>
+    </div>
+{% endblock %}
+
+{% block privatejs %}
+<script type="text/javascript">
+	$(function () {
+		$('.nav-tabs li').click(function () {
+			$('.tab-item').eq($(this).index()).show().siblings('.tab-item').hide();
+		})
+	})
+</script>
+{% endblock %}

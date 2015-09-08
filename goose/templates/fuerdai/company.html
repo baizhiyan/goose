@@ -1,0 +1,137 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 商铺列表 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">商铺管理</a></li>
+	    <li class="active"><a href="#">商铺列表</a></li>
+	  </ol>
+	  {% block search %}
+	  <div class="container-fluid search ">
+	  	<div class="clearfix spacing-bottom">
+		  	<input type="text" class="fl-left"><span class="glyphicon glyphicon-search search-ico"></span><label class="spacing fl-left">搜索商家</label>
+	  	</div>
+		<div class="row">
+			<div class="col-xs-2">
+				<select class="form-control">
+				  <option>商铺类别</option>
+				  <option>美食</option>
+				  <option>美容美发</option>
+				  <option>娱乐</option>
+				  <option>其他</option>
+				</select>
+			</div>
+			<div class="col-xs-2">
+				<select class="form-control">
+				  <option>具体类别</option>
+				  <option>火锅</option>
+				  <option>烧烤</option>
+				</select>
+			</div>
+			<div class="col-xs-2">
+				<select class="form-control">
+				  <option>城市</option>
+				  <option>杭州</option>
+				  <option>深圳</option>
+				</select>
+			</div>
+			<div class="col-xs-2">
+				<select class="form-control">
+				  <option>热门商圈</option>
+				  <option>银泰</option>
+				  <option>万达</option>
+				</select>
+			</div>
+			<button type="button" class="btn btn-primary col-xs-1">搜索</button>
+			<button type="button" class="btn btn-primary col-xs-1 addbtn">下载</button>
+			<button type="button" class="btn btn-primary col-xs-1 addbtn"><a href="/add_company/"><span class="glyphicon glyphicon-plus"></span>新增</a></button>
+		</div>
+	  </div>
+	  {% endblock %}
+
+	  {% block table %}
+	  <div class="table-responsive tickling-table">
+		<table class="table table-condensed">
+			<tr>
+			  <td><input type="checkbox" class="all-check"></td>
+			  <td>商铺名称</td>
+			  <td>所属公司</td>
+			  <td>省份</td>
+			  <td>城市</td>
+			  <td>地区</td>
+			  <td>所属商圈</td>
+			  <td><a  href="/company_item/" class="cur-ico">查看</a></td>
+			</tr>
+			<tr>
+			  <td ><input type="checkbox" class="select-check" ></td>
+			  <td>外婆家</td>
+			  <td>XXXX公司</td>
+			  <td>浙江省</td>
+			  <td>杭州</td>
+			  <td>拱墅区</td>
+			  <td>万达商圈</td>
+			  <td><a  href="/company_item/" class="cur-ico">查看</a></td>
+			</tr>
+			<tr>
+			  <td ><input type="checkbox" class="select-check" ></td>
+			  <td>外婆家</td>
+			  <td>XXXX公司</td>
+			  <td>浙江省</td>
+			  <td>杭州</td>
+			  <td>拱墅区</td>
+			  <td>万达商圈</td>
+			  <td><a  href="/company_item/" class="cur-ico">查看</a></td>
+			</tr>
+			<tr>
+			  <td ><input type="checkbox" class="select-check" ></td>
+			  <td>外婆家</td>
+			  <td>XXXX公司</td>
+			  <td>浙江省</td>
+			  <td>杭州</td>
+			  <td>拱墅区</td>
+			  <td>万达商圈</td>
+			  <td><a  href="/company_item/" class="cur-ico">查看</a></td>
+			</tr>
+			<tr>
+			  <td ><input type="checkbox" class="select-check" ></td>
+			  <td>外婆家</td>
+			  <td>XXXX公司</td>
+			  <td>浙江省</td>
+			  <td>杭州</td>
+			  <td>拱墅区</td>
+			  <td>万达商圈</td>
+			  <td><a  href="/company_item/" class="cur-ico">查看</a></td>
+			</tr>
+		</table>
+		{% block pagination %}
+		  <nav class="clearfix">
+		    <ul class="pagination">
+		      <li>
+		        <a href="#" aria-label="Previous">
+		          <span aria-hidden="true">&laquo;</span>
+		        </a>
+		      </li>
+		      <li><a href="#">1</a></li>
+		      <li><a href="#">2</a></li>
+		      <li><a href="#">3</a></li>
+		      <li><a href="#">4</a></li>
+		      <li><a href="#">5</a></li>
+		      <li>
+		        <a href="#" aria-label="Next">
+		          <span aria-hidden="true">&raquo;</span>
+		        </a>
+		      </li>
+		    </ul>
+		    <div class="pagination-item">
+		    	<span class="">选择当前数量：<em>112</em>页</span>
+		    	<span class="spacing">选择全部：<em>112</em>页</span>
+		    </div>
+		 </nav>
+		{% endblock %}
+	  </div>
+	  {% endblock %}
+	</div>
+{% endblock %}
+
+

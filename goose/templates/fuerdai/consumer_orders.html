@@ -1,0 +1,102 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 消费订单 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">财务管理</a></li>
+	    <li class="active"><a href="#">消费订单</a></li>
+	  </ol>
+	  {% block search %}
+	  <div class="container-fluid search ">
+		<div class="row">
+			<div class="col-xs-2">
+				<input type="text" class="form-control" placeholder="商户搜索"><!-- 做模糊搜索 -->
+			</div>
+			<div class="col-xs-2">
+				<input type="text" class="form-control" placeholder="门店搜索"><!-- 做模糊搜索 -->
+			</div>
+			<div class="col-xs-2">
+				<input type="text" class="form-control" placeholder="支付状态搜索"><!-- 做模糊搜索 -->
+			</div>
+			<div class="col-xs-3">
+				<div class="input-group date form_datetime2" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly disabled="disabled" placeholder="日期搜索">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+			</div>
+			<button type="button" class="btn btn-primary col-xs-1">搜索</button>
+			<button type="button" class="btn btn-primary col-xs-1 addbtn">下载</button>
+		</div>
+	  </div>
+	  {% endblock %}
+	  
+	  {% block statistics %}
+	  <div class="statistics row">
+	  	<p class="col-xs-5 spacing">消费总份数:<span>2333</span>份</p>
+		<p class="col-xs-5 ">实收总金额:<span>2333</span>元</p>
+	  </div>
+	  {% endblock %}
+
+	  {% block table %}
+	  <div class="table-responsive">
+		<table class="table table-condensed">
+			<tr>
+			  <td><input type="checkbox" class="all-check"></td>
+			  <td>订单号</td>
+			  <td>消费时间</td>
+			  <td>消费用户</td>
+			  <td>消费商户</br>消费门店</td>
+			  <td>消费金额(元)</td>
+			  <td>优惠券抵扣</br>红包抵扣</td>
+			  <td>实付金额(元)</br>服务费(元)</td>
+			  <td>实收金额(元)</td>
+			  <td>支付状态</td>
+			  <td>支付途径</td>
+			</tr>
+			<tr>
+			  <td ><input type="checkbox" class="select-check" ></td>
+			  <td>121215331212153322</td>
+			  <td><p>2015.8.15</p><p>13:12</p></td>
+			  <td>陈逗比陈逗比陈逗比陈逗比</td>
+			  <td>外婆家/外婆家</td>
+			  <td>56</td>
+			  <td>12/5</td>
+			  <td>77/5</td>
+			  <td>13</td>
+			  <td>成功</td>
+			  <td>支付宝</td>
+			</tr>
+		</table>
+		{% block pagination %}
+		  <nav class="clearfix">
+		    <ul class="pagination">
+		      <li>
+		        <a href="#" aria-label="Previous">
+		          <span aria-hidden="true">&laquo;</span>
+		        </a>
+		      </li>
+		      <li><a href="#">1</a></li>
+		      <li><a href="#">2</a></li>
+		      <li><a href="#">3</a></li>
+		      <li><a href="#">4</a></li>
+		      <li><a href="#">5</a></li>
+		      <li>
+		        <a href="#" aria-label="Next">
+		          <span aria-hidden="true">&raquo;</span>
+		        </a>
+		      </li>
+		    </ul>
+		    <div class="pagination-item">
+		    	<span class="">选择当前数量：<em>112</em>页</span>
+		    	<span class="spacing">选择全部：<em>112</em>页</span>
+		    </div>
+		 </nav>
+		{% endblock %}
+	  </div>
+	  {% endblock %}
+	</div>
+{% endblock %}
+
+

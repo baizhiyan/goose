@@ -1,0 +1,96 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+
+
+<!-- 新增商铺页面 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">运营管理</a></li>
+	    <li class="active"><a href="#">商家类别管理</a></li>
+	  </ol>
+	  <div class="container-fluid search crowdfunding-tab">
+	  	<div class="row sortul">
+	  		<ul class="paralleling col-md-3 bigsort">
+	  			<li>大类</li>
+	  			<li class="add">增加<span class="glyphicon glyphicon-plus spacing"></span></li>
+	  			<li class="bigsort-title"><span class="click">美食</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li class="bigsort-title"><span class="click">旅游</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li class="bigsort-title"><span class="click">电影</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  		</ul>
+	  		<ul class="paralleling col-md-3 col-md-offset-1 smallsort" style="display:none;">
+	  			<li>小类</li>
+	  			<li class="add">增加<span class="glyphicon glyphicon-plus spacing"></span></li>
+	  			<li><span class="click">美食</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li><span class="click">美食</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li><span class="click">美食</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  		</ul>
+	  		<ul class="paralleling col-md-3 col-md-offset-1 smallsort" style="display:none;">
+	  			<li>小类</li>
+	  			<li class="add">增加<span class="glyphicon glyphicon-plus spacing"></span></li>
+	  			<li><span class="click">美食</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li><span class="click">美食</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li><span class="click">美食</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  		</ul>
+	  		<ul class="paralleling col-md-3 col-md-offset-1 smallsort" style="display:none;">
+	  			<li>小类</li>
+	  			<li class="add-smallsort">增加<span class="glyphicon glyphicon-plus spacing"></span></li>
+	  			<li><span class="click">美食</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li><span class="click">美食</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  			<li><span class="click">美食</span><span class="glyphicon glyphicon-pencil spacing"></span></li>
+	  		</ul>
+	  	</div>
+	  </div>
+	</div> 
+{% endblock %}
+
+{% block privatejs %}
+<script src="{% static "fuerdai/js/jquery.jeditable.js"%}" type="text/javascript" charset="utf-8"></script>  
+<script type="text/javascript">
+	$(function () {
+		$('.bigsort-title').click(function () {
+			var i = $(this).index();
+			console.log(i);
+			$('.smallsort').eq(i-2).show().siblings('.smallsort').hide();
+		});
+		$('.add').click(function () {
+			$('.mask').show();
+			$('#sort_name').val("");
+		})
+		$('#save_sort').click(function () {
+			$('.mask').hide();
+		});
+		$(".click").editable("http://%s%sphp", { 
+		  indicator : "",
+		  select: true,  
+               submit: 'OK',  
+               cancel: 'cancel',  
+               id   : 'elementid',  
+               name : 'newvalue',  
+               cssclass: "editable" 
+		});
+	})
+</script>
+{% endblock %}
+
+{% block mask %}
+<div class="mask">
+	<div class="mask-bg"></div>
+	<div class="maskcontent" id="sort_content">
+		<div class="tableshow container-fluid spacing-top" >
+			<p>添加类</p>
+			<div class="sort-item">
+				<div class="row">
+				  <div class="col-md-2">类名</div>
+				  <div class="col-md-10"><input type="text" style="width:80%;" id="sort_name"></div>
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary centered" id="save_sort"><a href="#">保存</a></button>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+
+

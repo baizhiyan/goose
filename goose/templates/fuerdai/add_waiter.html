@@ -1,0 +1,83 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 新增店小二页面 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">商铺管理</a></li>
+	    <li><a href="/waiter/">店小二管理</a></li>
+	    <li class="active"><a href="#">新增店小二</a></li>
+	  </ol>
+	  {% block ticking-form %}
+	  <form action="" method="" id="">
+		  <div class="tableshow container-fluid">
+			<div class="row">
+			  <div class="col-md-2">店小二id</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">姓名</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">手机号码</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">昵称</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">当前所在门店</div>
+			  <div class="col-md-10 clearfix">
+				  <input type="text" class="fl-left"><span class="glyphicon glyphicon-search search-ico"></span>
+			  </div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>类型选择</p>
+			<div class="row">
+			  <div class="col-md-2">店小二类型</div>
+			  <div class="col-md-5"><input type="radio" name="waiter-type" id="no-authentication"><label class="spacing">认证店小二</label></div>
+			  <div class="col-md-5"><input type="radio" name="waiter-type" id="authentication"><label class="spacing">非认证店小二</label></div>
+			</div>
+		  </div>
+		  <div class="extra container-fluid tableshow" style="display:none;">
+				<div class="row">
+				  <div class="col-md-2">身份证号码</div>
+				  <div class="col-md-10"><input type="text"></div>
+				</div>
+				<div class="row">
+				  <div class="col-md-2">身份证正面照片</div>
+				  <div class="col-md-10"><input type="file" id=""></div>
+				</div>
+				<div class="row">
+				  <div class="col-md-2">身份证反面照片</div>
+				  <div class="col-md-10"><input type="file" id=""></div>
+				</div>
+				<div class="row">
+				  <div class="col-md-2">手持身份证照片</div>
+				  <div class="col-md-10"><input type="file" id=""></div>
+				</div>
+		  </div>
+		  <button type="button" class="btn btn-primary centered"><a href="">保存</a></button>
+	  </form>
+	  {% endblock %}
+	</div> 
+{% endblock %}
+
+{% block privatejs %}
+  <script type="text/javascript">
+ 	$(function () {
+ 		$('#no-authentication').click(function () {
+ 			$('.extra').hide();
+ 		})
+ 		$('#authentication').click(function () {
+ 			$('.extra').show();
+ 		})
+ 	})
+  </script>
+{% endblock %}
+
+
+

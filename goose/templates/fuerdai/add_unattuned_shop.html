@@ -1,0 +1,145 @@
+{% extends "fuerdai/base.html" %}{% load static %}
+
+<!-- 新增非认证门店 -->
+{% block content %}
+	<div class="col-xs-15 col-md-10">
+	  <ol class="breadcrumb">
+	    <li><a href="#">非认证门店管理</a></li>
+	    <li class="active"><a href="#">新增非认证门店</a></li>
+	  </ol>
+	  {% block ticking-form %}
+	  <form action="" method="" id="">
+		  <div class="tableshow container-fluid">
+			<div class="row">
+			  <div class="col-md-2">门店名称</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">所属商圈</div>
+			  <div class="col-md-10"><input type="text"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">门店位置</div>
+			  <div class="col-md-10">
+			  	<select>
+			  		<option>所属省份</option>
+			  		<option>浙江省</option>
+			  		<option>广东省</option>
+			  	</select>
+			  	<select>
+			  		<option>所属城市</option>
+			  		<option>杭州</option>
+			  		<option>深圳</option>
+			  	</select>
+			  	<select>
+			  		<option>所属区域</option>
+			  		<option>拱墅区</option>
+			  		<option>上城区</option>
+			  	</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">具体地址</div>
+			  <div class="col-md-10"><input type="text" placeholder="经度">
+			  <input type="text" placeholder="纬度" class="spacing"></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">门店类别</div>
+			  <div class="col-md-10">
+			  	<select class="form-control" style="width:20%;">
+			  		<option>A</option>
+			  		<option>B</option>
+			  		<option>C</option>
+			  	</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">具体类别</div>
+			  <div class="col-md-10">
+			  	<select class="form-control" style="width:20%;">
+			  		<option>A</option>
+			  		<option>B</option>
+			  		<option>C</option>
+			  	</select>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">营业时间</div>
+			  <div class="col-md-10 settime clearfix">
+		    	<input type="text" placeholder="开始时间">
+		    	<input type="text" placeholder="结束时间" class="spacing">
+			  </div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+	  		<p>添加信息</p>
+			<div class="row">
+			  <div class="col-md-2">添加人</div>
+			  <div class="col-md-10"><input type="text" ></div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">添加时间</div>
+			  <div class="col-md-10">
+			  	<div class="input-group date form_datetime2 col-md-5" data-date-format="yyyy MM dd - hh:ii" data-date="yyyy MM dd - hh:ii" date-stardivate="2013 02 21 - 15:25" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-2">添加时的简介</div>
+			  <div class="col-md-10"><textarea style="resize: none;width:50%;height:200px;" ></textarea></div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+		  	<div class="clearfix ">
+				<p class="fl-left spacing-halftop">提供服务的店小二</p><a href="/add_waiter/"><span class="glyphicon glyphicon-plus fl-right cur-ico add-shop pad-top"></span></a>
+			</div>
+			<div class="shopimg">
+				<div class="row">
+					<div class="col-md-2">店小二</div>
+					<div class="col-md-10">
+						<a href="/waiter_item/">小胖</a>
+					</div>
+				</div>
+			</div>
+		  </div>
+		  <div class="tableshow container-fluid spacing-top">
+		  	<div class="clearfix ">
+				<p class="fl-left spacing-halftop">商户图片</p><span class="glyphicon glyphicon-plus fl-right cur-ico add-shop pad-top"></span>
+			</div>
+			<div class="shopimg">
+				<div class="row">
+					<div class="col-md-2">商户图片</div>
+					<div class="col-md-10">
+						<input type="file" id="">
+					</div>
+				</div>
+			</div>
+		  </div>
+		  <button type="button" class="btn btn-primary centered"><a href="">保存</a></button>
+	  </form>
+	  {% endblock %}
+	</div> 
+{% endblock %}
+
+{% block privatejs %}
+  <script type="text/javascript">
+ 	$(function () {
+ 		$('.add-shop').click(function () {
+ 			var addshop = '<div class="row">' + $('.shopimg .row').html() + '</div>';
+ 			$('.shopimg').append(addshop);
+ 		})
+ 		$('#independent').click(function () {
+ 			$('.extra').show();
+ 		})
+ 		$('#not-independent').click(function () {
+ 			$('.extra').hide();
+ 		})
+ 	})
+  </script>
+{% endblock %}
+
+
+
